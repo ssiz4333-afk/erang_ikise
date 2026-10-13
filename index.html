@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>이키세 IKISE 안내</title>
+<meta name="description" content="도테라 이키세(IKISE) 한국 출시 안내 — 개발 이야기, 7단계 제품, 피부 타입별 루틴, 1:1 상담 신청">
+<meta property="og:type" content="website">
+<meta property="og:title" content="이키세 IKISE · 가장 순수한 정수만을 담다">
+<meta property="og:description" content="개발 이야기부터 7단계 제품, 피부 타입별 루틴까지. 이랑코치가 안내합니다.">
+<meta property="og:image" content="/img/og.jpg">
+<meta name="theme-color" content="#B6BBAA">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600;700&display=swap">
+<style>
+/* Layout: a quiet spa brochure on sage — one reading column, product shelf, routine tabs, consult form at the end */
+:root{
+  --bg:#EEF0EA; --paper:#F8F8F4; --ink:#1F241B; --muted:#4F5747; --sage:#B6BBAA; --sage-soft:#DADDD2;
+  --olive:#3B4232; --on-olive:#F4F3EE; --line:#CBD0C2; --focus:#6E7A5A;
+  --f-display:"Noto Serif KR","Nanum Myeongjo",serif;
+  --f-latin:"Cormorant Garamond","Times New Roman",serif;
+  --f-body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#151812; --paper:#1D2119; --ink:#E7EAE0; --muted:#AEB5A4; --sage:#4E5545; --sage-soft:#2A2F24;
+  --olive:#CBD3BA; --on-olive:#1A1E16; --line:#363C2F; --focus:#AEB98F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151812; --paper:#1D2119; --ink:#E7EAE0; --muted:#AEB5A4; --sage:#4E5545; --sage-soft:#2A2F24;
+  --olive:#CBD3BA; --on-olive:#1A1E16; --line:#363C2F; --focus:#AEB98F; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{word-break:keep-all;overflow-wrap:break-word;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+@media (min-width:860px){body{padding-bottom:0}}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.3;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-family:var(--f-latin);font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.sec{padding-block:72px}
+.sec-head{display:flex;flex-direction:column;gap:12px;max-width:640px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(26px,4.2vw,36px)}
+.sec-head p{color:var(--muted)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{font-family:var(--f-latin);font-size:22px;letter-spacing:.38em;font-weight:500;text-decoration:none}
+.nav-links{display:none;gap:22px;font-size:14px}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+@media (min-width:860px){.nav-links{display:flex}}
+.mnav{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.mnav::-webkit-scrollbar{display:none}
+.mnav a{flex:none;font-size:13.5px;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:var(--paper);white-space:nowrap}
+@media (min-width:860px){.mnav{display:none}}
+section[id],[id="top"]{scroll-margin-top:108px}
+@media (min-width:860px){section[id],[id="top"]{scroll-margin-top:68px}}
+.strip{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--olive);color:var(--on-olive);border-radius:18px;padding:14px 18px;text-decoration:none;margin-top:28px}
+.strip b{font-size:15px;display:block}.strip span{font-size:13px;opacity:.85}
+.strip i{font-style:normal;font-family:var(--f-latin);font-size:34px;font-weight:600;line-height:1;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;font:700 15px/1 var(--f-body);text-decoration:none;cursor:pointer;border:1.5px solid var(--olive);transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-solid{background:var(--olive);color:var(--on-olive)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-sm{min-height:40px;padding:0 18px;font-size:14px}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--sage) 0%,var(--sage-soft) 100%);overflow:hidden}
+.hero .wrap{display:grid;gap:8px;padding-block:36px 0}
+.hero-text{order:1}.hero-img{order:2}
+.facts-m{order:3}
+@media (min-width:860px){.hero .wrap{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:24px;padding-block:56px 40px}}
+.hero-text{display:flex;flex-direction:column;gap:18px;min-width:0}
+.kanji{font-family:var(--f-display);font-size:clamp(56px,9vw,84px);font-weight:600;line-height:1}
+.wordmark{font-family:var(--f-latin);font-size:clamp(34px,5vw,46px);letter-spacing:.42em;font-weight:500;line-height:1}
+.hero h1{font-size:clamp(28px,4.6vw,42px);margin-top:10px}
+.hero-lead{color:var(--ink);opacity:.86;max-width:30em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.hero-cta .btn{flex:1 1 140px;padding:0 16px}
+@media (min-width:860px){.hero-cta .btn{flex:0 0 auto;padding:0 24px}}
+.hero-img{margin:0 -20px;min-width:0}
+.hero-img img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%)}
+@media (min-width:860px){.hero-img{margin:0}.hero-img img{border-radius:28px;-webkit-mask-image:none;mask-image:none}}
+.facts-m{margin-top:-24px;position:relative}
+@media (min-width:860px){.facts-m{grid-column:1/-1;margin-top:8px}}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid color-mix(in srgb,var(--ink) 18%,transparent);margin-top:8px}
+.facts div{padding:16px 8px 22px 0;display:flex;flex-direction:column;gap:2px}
+.facts b{white-space:nowrap;font-family:var(--f-latin);font-size:clamp(21px,6.2vw,30px);font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.facts span{font-size:13px;color:var(--muted)}
+
+/* name */
+.name-grid{display:grid;gap:16px}
+@media (min-width:720px){.name-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.glyph{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;gap:22px;align-items:flex-start}
+.glyph .k{font-family:var(--f-display);font-size:64px;line-height:1;font-weight:600}
+.glyph h3{font-size:20px;margin-bottom:6px}
+.glyph p{color:var(--muted);font-size:15px}
+.name-sum{margin-top:22px;font-family:var(--f-display);font-size:clamp(20px,3vw,26px);font-weight:600}
+
+/* story */
+.story{background:var(--paper);border-block:1px solid var(--line)}
+.story-grid{display:grid;gap:36px}
+@media (min-width:860px){.story-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px}}
+.dev{margin:0 0 24px;max-width:360px}.dev img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:22px}
+.bio{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:28px;display:flex;flex-direction:column;gap:8px;max-width:420px}
+.bio h3{font-size:22px}.bio h3 span{font-family:var(--f-latin);font-weight:500;font-size:18px;letter-spacing:.08em;color:var(--muted);margin-left:6px}
+.bio-role{font-size:14px;font-weight:700;color:var(--muted)}
+.bio ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+blockquote{margin:0;font-family:var(--f-display);font-size:clamp(26px,4vw,38px);font-weight:600;line-height:1.35}
+.quote-by{margin-top:16px;color:var(--muted);font-size:14px}
+.story-body{display:flex;flex-direction:column;gap:18px;min-width:0}
+.story-body p{color:var(--ink)}
+.timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:6px}
+.timeline div{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--bg)}
+.timeline b{display:block;font-family:var(--f-latin);font-size:34px;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.timeline span{font-size:14px;color:var(--muted)}
+
+/* principles */
+.principles{display:grid;gap:0;border-top:1px solid var(--line)}
+.pr{display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px 16px;padding:26px 0;border-bottom:1px solid var(--line)}
+@media (min-width:860px){.pr{grid-template-columns:90px minmax(0,4fr) minmax(0,6fr);gap:24px}}
+.pr .n{font-family:var(--f-latin);font-size:34px;font-style:italic;color:var(--muted);line-height:1}
+.pr h3{font-size:22px}
+.pr .en{display:block;font-family:var(--f-latin);font-size:15px;letter-spacing:.12em;color:var(--muted);font-weight:500;margin-top:4px}
+.pr ul{margin:0;padding-left:18px;color:var(--ink);display:flex;flex-direction:column;gap:6px;grid-column:2}
+@media (min-width:860px){.pr ul{grid-column:auto}}
+.note{font-size:12.5px;color:var(--muted);margin-top:18px;line-height:1.6}
+
+/* philosophy */
+.philo{background:var(--olive);color:var(--on-olive)}
+.philo .wrap{display:grid;gap:22px;padding-block:64px}
+@media (min-width:860px){.philo .wrap{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:end}}
+.philo .tag{font-family:var(--f-latin);font-size:clamp(40px,7vw,64px);font-style:italic;line-height:1}
+.philo p{opacity:.9;max-width:36em}
+
+/* products */
+.shelf{display:grid;grid-auto-flow:column;grid-auto-columns:128px;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 10px;margin:0 -20px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.shelf>*{scroll-snap-align:start}
+.swipe{font-size:13px;color:var(--muted);margin:-20px 0 12px}
+@media (min-width:640px){.shelf{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;margin:0;padding:0;gap:12px}.swipe{display:none}}
+@media (min-width:640px){.shelf{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:980px){.shelf{grid-template-columns:repeat(7,minmax(0,1fr))}}
+.pcard{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;padding:8px;border-radius:18px;border:1.5px solid transparent;background:var(--paper);transition:border-color .15s ease}
+.pcard:hover{border-color:var(--line)}
+.pcard[aria-pressed="true"]{border-color:var(--olive)}
+.pcard:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.pcard img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;display:block;max-width:100%}
+.pcard .st{font-family:var(--f-latin);font-size:15px;font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.pcard .nm{font-size:14px;font-weight:700;line-height:1.35}
+.detail{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:24px;display:grid;gap:24px}
+@media (min-width:860px){.detail{grid-template-columns:minmax(0,4fr) minmax(0,7fr);padding:32px;gap:36px}}
+.detail img{width:100%;max-width:420px;max-height:260px;aspect-ratio:1/1;object-fit:cover;border-radius:18px;display:block}
+.d-body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.d-step{font-family:var(--f-latin);font-size:16px;letter-spacing:.2em;color:var(--muted);font-weight:600}
+.d-body h3{font-size:clamp(24px,3.4vw,30px)}
+.d-en{font-family:var(--f-latin);letter-spacing:.14em;color:var(--muted);font-size:15px;margin-top:-8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
+.chip.strong{background:var(--olive);color:var(--on-olive);border-color:var(--olive)}
+.d-head{font-weight:700;font-size:18px}
+.d-cols{display:grid;gap:18px}
+@media (min-width:640px){.d-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.d-cols h4{margin:0 0 6px;font-size:13px;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.d-cols ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.price-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;border-top:1px solid var(--line);padding-top:14px}
+.price-line b{font-size:22px;font-variant-numeric:tabular-nums}
+.price-line span{font-size:13px;color:var(--muted)}
+
+/* routine */
+.tabs{display:inline-flex;flex-wrap:wrap;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px;margin-bottom:22px}
+.tab{all:unset;cursor:pointer;padding:9px 18px;border-radius:999px;font-size:15px;font-weight:500;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--olive);color:var(--on-olive);font-weight:700}
+.tab:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.rt{display:grid;gap:14px}
+@media (min-width:720px){.rt{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.rt-col{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 24px}
+.rt-col h3{font-size:19px;margin-bottom:12px}
+.rt-col ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.rt-col li{display:flex;gap:12px;align-items:baseline}
+.rt-col li i{font-style:normal;font-family:var(--f-latin);font-weight:600;font-size:17px;width:20px;color:var(--muted);flex:none;text-align:center}
+.rt-tip{grid-column:1/-1;border-radius:18px;padding:16px 22px;background:var(--sage-soft);font-size:15px}
+
+/* promo */
+.promo{border-radius:28px;background:linear-gradient(160deg,var(--sage) 0%,var(--sage-soft) 100%);padding:32px 24px;display:grid;gap:22px}
+@media (min-width:860px){.promo{grid-template-columns:minmax(0,6fr) minmax(0,5fr);padding:44px;align-items:center}}
+.promo-pct{display:flex;align-items:flex-start;gap:4px;font-family:var(--f-latin);font-weight:500;line-height:.85}
+.promo-pct b{font-size:clamp(96px,16vw,150px);font-weight:500}
+.promo-pct span{font-size:clamp(34px,5vw,48px);display:flex;flex-direction:column;padding-top:8px;line-height:1}
+.promo h3{font-size:clamp(24px,3.6vw,32px)}
+.promo ul{margin:0;padding-left:18px;font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+.promo-price{display:flex;flex-direction:column;gap:2px}
+.promo-price s{color:var(--muted)}
+.promo-price b{font-size:clamp(30px,5vw,40px);font-variant-numeric:tabular-nums;line-height:1.2}
+.promo-items{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.promo-items img{width:56px;height:56px;border-radius:12px;object-fit:cover}
+.promo-items .rz{background:var(--paper);object-fit:contain;padding:4px}
+
+/* consult */
+.consult{background:var(--paper);border-top:1px solid var(--line)}
+.c-grid{display:grid;gap:28px}
+@media (min-width:860px){.c-grid{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px}}
+.c-side{display:flex;flex-direction:column;gap:16px}
+.c-side ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
+form{display:flex;flex-direction:column;gap:20px;min-width:0}
+.field{display:flex;flex-direction:column;gap:8px;border:0;margin:0;padding:0;min-width:0}
+.field>label,.field legend{font-size:14px;font-weight:700;padding:0}
+.req{color:var(--muted);font-weight:500;font-size:12.5px;margin-left:4px}
+input[type=text],select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%;min-height:48px}
+textarea{min-height:96px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt label{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-size:14.5px;cursor:pointer}
+.opt input:checked+label{background:var(--olive);color:var(--on-olive);border-color:var(--olive)}
+.opt input:focus-visible+label{outline:2px solid var(--focus);outline-offset:2px}
+.two{display:grid;gap:16px}
+@media (min-width:560px){.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.err{color:var(--ink);font-size:13.5px;background:var(--sage-soft);border-radius:10px;padding:8px 12px}
+.out{border:1.5px solid var(--olive);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:14px;background:var(--bg)}
+.out h3{font-size:20px}
+.out textarea{min-height:200px;font-size:14.5px;line-height:1.6}
+.out-actions{display:flex;flex-wrap:wrap;gap:10px}
+.status{font-size:14px;color:var(--muted);min-height:1.4em}
+
+/* footer */
+footer{padding-block:40px 56px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer b{color:var(--ink)}
+
+/* sticky mobile cta */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;gap:10px;align-items:center}
+.mcta p{font-size:13px;color:var(--muted);line-height:1.35;flex:1;min-width:0}
+@media (min-width:860px){.mcta{display:none}}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="페이지 이동">
+  <div class="wrap">
+    <a class="brand" href="#top">IKISE</a>
+    <div class="nav-links">
+      <a href="#story">개발 이야기</a>
+      <a href="#principles">다섯 가지 원칙</a>
+      <a href="#products">제품</a>
+      <a href="#routine">루틴</a>
+      <a href="#offer">컨벤션 혜택</a>
+    </div>
+    <a class="btn btn-solid btn-sm" href="#consult">1:1 상담 신청</a>
+  </div>
+  <div class="mnav" aria-label="섹션 바로가기">
+    <a href="#story">개발 이야기</a><a href="#principles">5가지 원칙</a><a href="#products">제품</a><a href="#routine">루틴</a><a href="#offer">컨벤션 혜택</a><a href="#consult">상담</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">doTERRA · New in Korea</span>
+      <div>
+        <div class="kanji" lang="ja">粋精</div>
+        <div class="wordmark" style="margin-top:10px">IKISE</div>
+      </div>
+      <h1>가장 순수하고 정제된<br>정수만을 담았습니다</h1>
+      <p class="hero-lead">도테라의 CPTG® 에센셜 오일과 휴믹 셰일 미네랄을 담은 7단계 스킨케어. 곧 한국에 출시됩니다.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#products">제품 살펴보기</a>
+        <a class="btn btn-ghost" href="#consult">1:1 상담 신청</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="img/hero.jpg" alt="물 위에 놓인 이키세 7종 제품 라인업" width="1123" height="855">
+    </div>
+    <div class="facts facts-m" id="facts">
+        <div><b>7</b><span>단계 풀 라인</span></div>
+        <div><b>93–100%</b><span>천연유래지수*</span></div>
+        <div><b>3<small style="font-size:18px">개월</small></b><span>안전성 평가</span></div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <a class="strip" href="#offer"><div><b>10.23–24 컨벤션 현장 한정 · Boost 키트</b><span>이키세 7종 + 리바이타젠 회원가 270,000원 · 자세히 보기</span></div><i>36%</i></a>
+  </div>
+  <section class="sec" id="name" aria-labelledby="name-h" style="padding-top:48px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The Name</span>
+        <h2 id="name-h">이름에 담긴 뜻, 粋精</h2>
+        <p>일본어 한자 ‘粋精(이키세이)’에서 온 이름입니다. 이름을 짓는 순간부터 도테라가 지켜 온 가치를 담았습니다.</p>
+      </div>
+      <div class="name-grid">
+        <div class="glyph">
+          <div class="k" lang="ja">粋</div>
+          <div><h3>순수함, 세련됨</h3><p>군더더기 없이 깨끗하고, 그 안에 품격이 있는 상태를 뜻합니다.</p></div>
+        </div>
+        <div class="glyph">
+          <div class="k" lang="ja">精</div>
+          <div><h3>순수함, 정수(精髓)</h3><p>일본에서 ‘에센셜 오일(精油)’을 쓸 때 들어가는 바로 그 글자입니다.</p></div>
+        </div>
+      </div>
+      <p class="name-sum">두 글자를 합치면, 에센셜 오일 가운데서도 가장 순수한 것.</p>
+    </div>
+  </section>
+
+  <section class="sec story" id="story" aria-labelledby="story-h">
+    <div class="wrap">
+      <div class="story-grid">
+        <div>
+          <span class="eyebrow">How it was made</span>
+          <h2 id="story-h" style="font-size:clamp(26px,4.2vw,36px);margin:12px 0 28px">이키세는 이렇게 만들어졌습니다</h2>
+          <figure class="dev">
+            <img src="img/yujin.jpg" alt="컨벤션 무대에서 강연하는 이키세 개발자 유진 사이토" width="400" height="400">
+          </figure>
+          <div class="bio">
+            <h3>유진 사이토 <span>Yujin Saito</span></h3>
+            <p class="bio-role">이키세 개발자 · 전 도테라 재팬 제품 디렉터</p>
+            <ul>
+              <li>다국적 화장품 기업에서 20년 이상 스킨케어 제품 개발</li>
+              <li>시중에 잘 알려진 스킨케어 제품 개발 참여</li>
+              <li>도테라 재팬에서 이키세 개발 총괄 (착수부터 출시까지 13~14개월)</li>
+              <li>화장품 원료로 유통되지 않던 휴믹 셰일을 원료로 직접 등록</li>
+            </ul>
+          </div>
+          <blockquote>“탁월함에는<br>타협이 없다.”</blockquote>
+          <p class="quote-by">유진 사이토, 이키세 개발자 · 도테라 컨벤션 강연 중 (번역)</p>
+        </div>
+        <div class="story-body">
+          <p>이키세의 목표는 시장 최고의 제품들과 어깨를 나란히 하고, 그보다 나아지는 것이었습니다.</p>
+          <p>그가 강연에서 반복해 강조한 말은 두 가지입니다. 하나는 <b>“소비자에게 최고의 것을 드리고 싶다는 진심”</b>, 다른 하나는 <b>“탁월함에는 타협이 없다”</b>는 원칙입니다. 원료 하나, 펌프를 누르는 횟수 하나까지 이 기준으로 결정했습니다.</p>
+          <p>안전성 시험 비용 청구서를 본 도테라 재팬 대표가 “돈을 많이 쓰고 있다”고 하자, 그는 “안전에서는 타협하지 않겠다”고 답했습니다. 그리고 경영진은 그 결정을 지지했습니다.</p>
+          <div class="timeline">
+            <div><b>13–14</b><span>개월. 개발 착수부터 출시까지</span></div>
+            <div><b>3</b><span>개월. 그중 안전성 평가에 쓴 기간</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="principles" aria-labelledby="pr-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Five Principles</span>
+        <h2 id="pr-h">개발자가 지킨 다섯 가지 원칙</h2>
+        <p>유진 사이토가 강연에서 직접 소개한 이키세의 개발 원칙입니다.</p>
+      </div>
+      <div class="principles">
+        <div class="pr">
+          <span class="n">01</span>
+          <h3>오일과 미네랄<span class="en">Oil &amp; Minerals</span></h3>
+          <ul>
+            <li>도테라만 만들 수 있는 조합. CPTG® 에센셜 오일을 단순히 ‘첨가’한 것이 아니라, 오일이 제품의 수준을 끌어올리도록 설계했습니다.</li>
+            <li>휴믹 셰일은 화장품 원료로 유통되지 않아, 원료를 직접 찾아 등록했습니다.</li>
+          </ul>
+        </div>
+        <div class="pr">
+          <span class="n">02</span>
+          <h3>피부의 기초<span class="en">Skin Benefit</span></h3>
+          <ul>
+            <li>미네랄은 웰니스 피라미드의 맨 아래, 집으로 치면 기초 공사입니다. 기초가 약하면 좋은 성분을 더해도 제 힘을 내지 못합니다.</li>
+            <li>아미노산·유기산과 결합한 형태의 미네랄을 골라, 피부가 더 잘 활용할 수 있도록 했습니다.</li>
+          </ul>
+        </div>
+        <div class="pr">
+          <span class="n">03</span>
+          <h3>환경에 대한 배려<span class="en">Environment</span></h3>
+          <ul>
+            <li>식물 유래 플라스틱으로 석유계 플라스틱 사용을 줄였습니다.</li>
+            <li>모든 종이 케이스에 FSC(산림관리협의회) 인증을 받았습니다.</li>
+            <li>그린 나노 기술: 용기가 소각되더라도 이산화탄소 배출을 50% 이상 줄입니다.</li>
+          </ul>
+        </div>
+        <div class="pr">
+          <span class="n">04</span>
+          <h3>품질과 안전<span class="en">Quality &amp; Safety</span></h3>
+          <ul>
+            <li>전 제품 천연유래지수 90% 이상(ISO 16128)을 기준으로 삼았고, 실제로 93~100%를 달성했습니다.</li>
+            <li>전 제품 피부 저자극 테스트 완료. 사용 이력과 안전성 데이터가 있는 원료만 썼습니다.</li>
+            <li>연구소 시험 외에도 사무실 선반에 제품을 두고 실제 사용 환경에서 상태를 점검했습니다.</li>
+          </ul>
+        </div>
+        <div class="pr">
+          <span class="n">05</span>
+          <h3>아름다움과 즐거움<span class="en">Beauty &amp; Enjoyment</span></h3>
+          <ul>
+            <li>바르는 순간의 향, 텍스처, 손끝에 닿는 느낌까지. 매일 쓰고 싶은 경험이 제품을 완성한다고 보았습니다.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">* 천연유래지수: ISO 16128에 따른 단순 계산 결과로, 식약처 기준에 따른 천연화장품(유기농화장품)에 해당한다는 의미가 아닙니다.</p>
+    </div>
+  </section>
+
+  <section class="philo" aria-labelledby="philo-h">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" style="color:inherit;opacity:.75">doTERRA Philosophy</span>
+        <h2 id="philo-h" class="tag" style="margin-top:14px;font-family:var(--f-latin);font-weight:500">pursue what’s pure</h2>
+      </div>
+      <p>도테라는 CPTG® 품질 기준으로 검증한 에센셜 오일을, 산지의 농가·지역사회와 함께하는 코-임팩트 소싱으로 들여옵니다. 이키세는 그 오일과 미네랄을 피부에 전하는 ‘프리미엄 딜리버리 시스템’으로 설계된 스킨케어입니다.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="products" aria-labelledby="prod-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The Line</span>
+        <h2 id="prod-h">7단계 제품 살펴보기</h2>
+        <p>제품을 누르면 핵심 성분, 사용법, 회원가를 볼 수 있습니다. 숫자와 알파벳은 바르는 순서입니다.</p>
+      </div>
+      <p class="swipe">옆으로 넘겨서 제품을 고르세요 →</p>
+      <div class="shelf" id="shelf" role="group" aria-label="제품 선택"></div>
+      <article class="detail" id="detail" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <section class="sec" id="routine" aria-labelledby="rt-h" style="padding-top:24px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Your Routine</span>
+        <h2 id="rt-h">피부 타입별 추천 루틴</h2>
+        <p>내 피부 타입을 고르면 아침·저녁 순서가 바뀝니다. 잘 모르겠다면 상담에서 함께 체크해 드립니다.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="피부 타입">
+        <button class="tab" role="tab" id="tab-normal" aria-selected="true" aria-controls="rt-panel" data-k="normal">중성</button>
+        <button class="tab" role="tab" id="tab-dry" aria-selected="false" aria-controls="rt-panel" data-k="dry">건성</button>
+        <button class="tab" role="tab" id="tab-oily" aria-selected="false" aria-controls="rt-panel" data-k="oily">지·복합성</button>
+      </div>
+      <div class="rt" id="rt-panel" role="tabpanel" aria-labelledby="tab-normal"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="offer" aria-labelledby="offer-h" style="padding-top:24px">
+    <div class="wrap">
+      <div class="promo">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span class="eyebrow">2026 doTERRA Korea Boost Convention</span>
+          <h3 id="offer-h">컨벤션 현장 한정, Boost 키트</h3>
+          <div class="promo-pct"><b>36</b><span>%<span style="font-size:.62em;letter-spacing:.06em;font-weight:600">OFF</span></span></div>
+          <div class="promo-items" aria-label="키트 구성">
+            <img src="img/balm.jpg" alt="클렌징 밤"><img src="img/wash.jpg" alt="페이스 워시"><img src="img/lotion.jpg" alt="로션"><img src="img/serum.jpg" alt="듀얼 세럼"><img src="img/cream.jpg" alt="데이 앤 나이트 크림"><img src="img/eye.jpg" alt="인텐시브 아이 크림"><img src="img/oil.jpg" alt="부스터 오일"><img class="rz" src="img/revitazen.png" alt="리바이타젠 15mL">
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="promo-price">
+            <span style="font-size:14px;color:var(--muted)">10.23(금) – 10.24(토) · 이키세 7종 + 리바이타젠 15mL</span>
+            <s>419,000원</s>
+            <b>회원가 270,000원</b>
+            <span style="font-weight:700">149,000원 SAVE · 키트당 사은품 4종</span>
+          </div>
+          <ul>
+            <li>사은품: 이키세 쇼퍼백 · 브로슈어 · 프리미엄 스파출라 · 리바이타젠 오일 카드 (소진 시 마감)</li>
+            <li>컨벤션 현장에서 티켓 구매자 본인만 주문 (직접 수령 / 배송 선택)</li>
+            <li>일반주문 · 카드결제만 가능 (LRP · 포인트 · 현금 불가), 회원번호당 최대 5개</li>
+          </ul>
+          <a class="btn btn-solid" href="#consult" data-interest="컨벤션 Boost 키트" style="align-self:flex-start">키트 · 컨벤션 문의하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec consult" id="consult" aria-labelledby="c-h">
+    <div class="wrap">
+      <div class="c-grid">
+        <div class="c-side">
+          <span class="eyebrow">1:1 Consultation</span>
+          <h2 id="c-h" style="font-size:clamp(26px,4.2vw,36px)">내 피부에 맞는지,<br>먼저 상담해 보세요</h2>
+          <p style="color:var(--muted)">이랑코치가 피부 타입에 맞는 단계와 사용 순서를 직접 안내해 드립니다. 수서역 인근 웰니스센터에서 방문 상담도 가능합니다.</p>
+          <ol>
+            <li>아래 내용을 고르고 ‘상담 메시지 만들기’를 누르세요.</li>
+            <li>만들어진 메시지를 복사하세요.</li>
+            <li>인스타그램 DM 창에 붙여 넣어 보내 주세요.</li>
+          </ol>
+          <p style="font-size:14px">인스타그램 <b>@erang_coach</b></p>
+        </div>
+
+        <div>
+          <form id="cform" novalidate>
+            <div class="two">
+              <div class="field">
+                <label for="c-name">이름 또는 닉네임<span class="req">필수</span></label>
+                <input type="text" id="c-name" autocomplete="name" placeholder="예: 김OO">
+              </div>
+              <div class="field">
+                <label for="c-skin">내 피부 타입</label>
+                <select id="c-skin">
+                  <option value="잘 모르겠어요">잘 모르겠어요</option>
+                  <option value="건성">건성 (당기고 건조함)</option>
+                  <option value="중성">중성 (대체로 편안함)</option>
+                  <option value="지·복합성">지·복합성 (T존 번들거림)</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend>요즘 신경 쓰이는 피부 고민 <span class="req">여러 개 선택</span></legend>
+              <div class="opts" id="c-concerns"></div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend>궁금한 내용 <span class="req">여러 개 선택</span></legend>
+              <div class="opts" id="c-interest"></div>
+            </fieldset>
+
+            <div class="two">
+              <fieldset class="field">
+                <legend>상담 방식</legend>
+                <div class="opts" id="c-way"></div>
+              </fieldset>
+              <div class="field">
+                <label for="c-time">편한 시간대</label>
+                <select id="c-time">
+                  <option>평일 오전</option>
+                  <option>평일 오후</option>
+                  <option selected>평일 저녁</option>
+                  <option>주말</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-memo">남기고 싶은 말</label>
+              <textarea id="c-memo" placeholder="예: 지금 쓰는 화장품, 피부가 예민한 부위 등"></textarea>
+            </div>
+
+            <p class="err" id="c-err" hidden>이름 또는 닉네임을 적어 주세요.</p>
+            <button class="btn btn-solid" type="submit" style="align-self:flex-start">상담 메시지 만들기</button>
+          </form>
+
+          <div class="out" id="out" hidden style="margin-top:24px">
+            <h3>상담 메시지가 준비됐어요</h3>
+            <label for="out-text" style="font-size:14px;color:var(--muted)">아래 내용을 복사해 DM으로 보내 주세요. 직접 고쳐도 됩니다.</label>
+            <textarea id="out-text"></textarea>
+            <div class="out-actions">
+              <button class="btn btn-solid" type="button" id="copy">메시지 복사</button>
+              <a class="btn btn-ghost" id="dm" href="https://ig.me/m/erang_coach" target="_blank" rel="noopener">인스타그램 DM 열기</a>
+              <a class="btn btn-ghost" id="kakao" href="#" target="_blank" rel="noopener" hidden>카카오톡으로 상담</a>
+            </div>
+            <p class="status" id="status" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>이랑코치 · 웰니스리더</b> · 도테라 웰니스 코치 · Instagram @erang_coach</p>
+    <p>이 페이지는 도테라 웰니스 코치가 운영하는 제품 안내 페이지이며, 도테라코리아 공식 페이지가 아닙니다. 제품 정보와 가격은 도테라코리아 회원 자료(2026년 10월) 기준이며 출시 시 달라질 수 있습니다.</p>
+    <p>* 천연유래지수는 ISO 16128에 따른 단순 계산 결과로, 식약처 기준 천연화장품(유기농화장품)에 해당한다는 의미가 아닙니다.</p>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta" hidden>
+  <p>내 피부에 맞을지 궁금하다면</p>
+  <a class="btn btn-solid btn-sm" href="#consult">1:1 상담 신청</a>
+</div>
+
+<script>
+(function(){
+  /* 상담 채널 설정: 카카오톡 오픈채팅/채널 주소가 생기면 여기에 넣으세요 */
+  var KAKAO_URL = "";
+
+  var P = [
+    {id:"balm", step:"1", name:"클렌징 밤", en:"Cleansing Balm", size:"70g", idx:"100%", price:"45,000", pv:"31", func:false,
+     head:"버터처럼 부드럽게 녹아드는 클렌징 경험",
+     desc:"피부에 닿으면 오일로 변하면서 메이크업과 노폐물을 딥 클렌징해 주고, 세안 후 당김 없이 수분 베일을 씌운 듯한 촉촉한 피부결을 남깁니다.",
+     tags:["메이크업 리무버 & 클렌징","피부 장벽 보호","피지 밸런스 조절"],
+     ing:["라임·리씨·페티그레인 오일 + 휴믹 셰일","아스코르브산(비타민C), 아스코빌글루코사이드","비즈왁스·해바라기씨 왁스로 풍부한 밤 텍스처","속눈썹 연장 시에도 사용 가능"],
+     use:["적당량을 마른 손에 덜어 얼굴 전체에 원을 그리듯 마사지","메이크업과 노폐물이 충분히 녹으면 미지근한 물로 헹굼","팁: 물을 살짝 묻혀 하얗게 유화시키면 노폐물이 더 잘 씻겨 나감"]},
+    {id:"wash", step:"2", name:"페이스 워시", en:"Face Wash", size:"100g", idx:"99%", price:"33,000", pv:"22", func:false,
+     head:"맑고 균형 잡힌 피부를 위한 부드러운 거품 클렌저",
+     desc:"풍성하고 볼륨감 있는 거품이 쿠션처럼 피부를 감싸 자극 없이 노폐물을 제거하고, 세안 후에도 당김 없이 촉촉한 피부결을 유지합니다.",
+     tags:["순한 데일리 클렌저","미세하고 쫀쫀한 거품","피지 밸런스 조절"],
+     ing:["라임·리씨·페티그레인 오일 + 휴믹 셰일","비누 베이스 + 아미노산계 세정 성분","호호바 오일, 히알루론산","아스코르브산, 아스코빌글루코사이드"],
+     use:["손바닥에 완두콩 크기만큼 덜어 미지근한 물로 충분히 거품 내기","거품으로 얼굴을 부드럽게 마사지하듯 세안","깨끗이 헹군 뒤 타월로 가볍게 눌러 물기 제거"]},
+    {id:"lotion", step:"3", name:"로션 스무드 앤 리치", en:"Lotion Smooth & Rich", size:"150mL", idx:"97%", price:"43,000", pv:"27", func:true,
+     head:"약간 점성 있는 텍스처로 깊은 속보습",
+     desc:"피부에 깊은 수분을 공급하고, 모공을 정돈하고, 피부 톤을 고르게 하여 다음 단계 스킨케어를 위한 준비를 돕는 액상 트리트먼트 토너·에센스입니다.",
+     tags:["액상 트리트먼트 토너/에센스","데일리 루틴의 핵심"],
+     ing:["프랑킨센스 오일 + 휴믹 셰일","나이아신아마이드(B3, 미백 기능성 원료)","글루코노락톤(PHA)","글리세린, 히알루론산"],
+     use:["적당량을 손바닥이나 화장솜에 덜어 얼굴 전체에 펴 바름","손바닥으로 가볍게 눌러 흡수","수분이 더 필요하면 2~3회 겹쳐 바르기, 차갑게 쓰면 상쾌한 토닝"]},
+    {id:"serum", step:"4", name:"듀얼 세럼 스무드 앤 리치", en:"Dual Serum Smooth & Rich", size:"28mL", idx:"94%", price:"96,000", pv:"78", func:true,
+     head:"산뜻한 윤광과 피부결을 동시에 이중 케어",
+     desc:"에센스와 오일이 혼합된 2층 제형으로 피부 본연의 빛을 살리고, 수분을 집중 공급해 탄력 있는 피부결로 가꿔 줍니다.",
+     tags:["2층 제형 세럼","광채 부스팅","수분 집중 공급","천연 핑크빛"],
+     ing:["프랑킨센스 오일 + 휴믹 셰일","나이아신아마이드(B3, 미백 기능성 원료)","글루코노락톤(PHA), 스쿠알란","시아노코발라민(B12): 천연 핑크빛"],
+     use:["로션으로 피부를 정돈한 뒤 용기를 충분히 흔들어 섞기","1~2펌프를 얼굴과 목 전체에 고르게 펴 바름","팁: 건성 피부는 부스터 오일과 함께 쓰면 더 좋음"]},
+    {id:"cream", step:"5", name:"데이 앤 나이트 페이스 크림", en:"Day & Night Face Cream", size:"45g", idx:"99%", price:"59,000", pv:"43", func:false,
+     head:"가벼운 텍스처, 오래 지속되는 수분 봉인",
+     desc:"탄탄한 피부 장벽 케어로 수분을 꽉 잠가, 하루 종일 투명하게 빛나는 피부를 완성하는 저자극 고보습 크림입니다.",
+     tags:["수분 봉인","피부 장벽 강화","올데이 광채","데이 & 나이트"],
+     ing:["분탄·코파이바 오일 + 휴믹 셰일","분탄 오일은 푸로쿠마린 프리(광독성 없음, Sun-Safe)","스쿠알란, 메도우폼씨오일","효모/동백나무꽃 발효여과물, 나이아신아마이드, PHA"],
+     use:["로션과 듀얼 세럼으로 정돈한 뒤 적당량을 얼굴과 목에 펴 바름","아침: 화장이 밀리지 않는 산뜻한 마무리","밤: 깊은 영양과 집중 보습"]},
+    {id:"eye", step:"E", name:"인텐시브 아이 크림", en:"Intensive Eye Cream", size:"20g", idx:"93%", price:"46,000", pv:"32", func:false,
+     head:"연약한 눈가를 위한 집중 케어",
+     desc:"수분 공급과 진정 효과를 동시에 제공하며, 눈가를 환하게 밝혀 주고 탄력을 강화합니다.",
+     tags:["탄력 케어","눈가 진정","집중 수분 공급"],
+     ing:["로즈 오일 + 휴믹 셰일","스쿠알란, 시어버터, 비즈왁스","아르니카 꽃 추출물","징크글루코네이트 & 카퍼글루코네이트"],
+     use:["이키세 스킨케어 마지막 단계에서 사용","적당량을 눈가에 부드럽게 펴 바름"]},
+    {id:"oil", step:"O", name:"부스터 오일", en:"Booster Oil", size:"27mL", idx:"99%", price:"55,000", pv:"40", func:false,
+     head:"수분과 광채를 극대화하는 고기능성 오일",
+     desc:"피부가 다음 단계의 스킨케어 성분을 온전히 받아들일 수 있도록 최적의 부스팅 상태를 만들어 줍니다. 얼굴·두피·바디 어디에나 쓰는 멀티 오일입니다.",
+     tags:["수분 부스팅","광채 강화","멀티태스킹 오일"],
+     ing:["로즈 제라늄 오일 + 휴믹 셰일","아스코르브산, 아스코빌글루코사이드","4종 뷰티 오일: 홍화씨·쌀겨·아르간·살구씨"],
+     use:["세안 직후: 바로 발라 수분 손실 방지","믹싱: 클렌저·크림·파운데이션에 1~2방울 섞어 보습력 업","멀티 케어: 두피, 모발, 바디, 손톱 등 건조한 부위"]}
+  ];
+
+  var shelf = document.getElementById("shelf");
+  var detail = document.getElementById("detail");
+  var current = "balm";
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+  function li(a){return a.map(function(x){return "<li>"+esc(x)+"</li>";}).join("");}
+
+  P.forEach(function(p){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "pcard"; b.dataset.id = p.id;
+    b.setAttribute("aria-pressed", p.id===current ? "true":"false");
+    b.innerHTML = '<img src="img/'+p.id+'.jpg" alt="" loading="lazy"><span class="st">STEP '+p.step+'</span><span class="nm">'+esc(p.name)+'</span>';
+    b.addEventListener("click", function(){ select(p.id, true); });
+    shelf.appendChild(b);
+  });
+
+  function select(id, scroll){
+    current = id;
+    var p = P.filter(function(x){return x.id===id;})[0];
+    Array.prototype.forEach.call(shelf.children, function(el){ el.setAttribute("aria-pressed", el.dataset.id===id ? "true":"false"); });
+    detail.innerHTML =
+      '<img src="img/'+p.id+'.jpg" alt="'+esc(p.name)+'">'+
+      '<div class="d-body">'+
+        '<span class="d-step">STEP '+p.step+' · '+p.size+'</span>'+
+        '<h3>'+esc(p.name)+'</h3>'+
+        '<span class="d-en">'+esc(p.en)+'</span>'+
+        '<div class="chips"><span class="chip strong">천연유래지수 '+p.idx+'*</span><span class="chip">피부 저자극 테스트 완료</span>'+(p.func?'<span class="chip">미백 기능성 화장품</span>':'')+'</div>'+
+        '<p class="d-head">'+esc(p.head)+'</p>'+
+        '<p>'+esc(p.desc)+'</p>'+
+        '<div class="chips">'+p.tags.map(function(t){return '<span class="chip">#'+esc(t)+'</span>';}).join("")+'</div>'+
+        '<div class="d-cols"><div><h4>핵심 성분</h4><ul>'+li(p.ing)+'</ul></div><div><h4>사용법</h4><ul>'+li(p.use)+'</ul></div></div>'+
+        '<div class="price-line"><b>회원가 '+p.price+'원</b><span>PV '+p.pv+'</span><a class="btn btn-ghost btn-sm" href="#consult" data-interest="'+esc(p.name)+'" style="margin-left:auto">이 제품 상담하기</a></div>'+
+      '</div>';
+    if(scroll && window.matchMedia("(max-width:859px)").matches){ var y=detail.getBoundingClientRect().top+window.scrollY-120; window.scrollTo({top:y,behavior:"smooth"}); }
+  }
+  select(current, false);
+
+  /* routine */
+  var R = {
+    normal:{am:[["2","페이스 워시"],["O","부스터 오일"],["3","로션 스무드 앤 리치"],["4","듀얼 세럼 스무드 앤 리치"],["5","데이 앤 나이트 페이스 크림"]],
+            pm:[["1","클렌징 밤"],["2","페이스 워시"],["3","로션 스무드 앤 리치"],["4","듀얼 세럼 스무드 앤 리치"],["5","데이 앤 나이트 페이스 크림"],["E","인텐시브 아이 크림"]],
+            tip:"저녁에는 로션을 바르기 전에 부스터 오일을 사용하면 광채가 살아납니다."},
+    dry:{am:[["2","페이스 워시"],["O","부스터 오일"],["3","로션 스무드 앤 리치"],["4","듀얼 세럼 스무드 앤 리치"],["5","데이 앤 나이트 페이스 크림"]],
+         pm:[["1","클렌징 밤"],["2","페이스 워시"],["O","부스터 오일"],["3","로션 스무드 앤 리치"],["4","듀얼 세럼 스무드 앤 리치"],["5","데이 앤 나이트 페이스 크림"],["E","인텐시브 아이 크림"]],
+         tip:"강한 수분 공급을 위해 로션 스무드 앤 리치를 두 번 레이어링하세요."},
+    oily:{am:[["2","페이스 워시"],["3","로션 스무드 앤 리치"],["4","듀얼 세럼 스무드 앤 리치"],["5","데이 앤 나이트 페이스 크림"]],
+          pm:[["1","클렌징 밤"],["2","페이스 워시"],["4","듀얼 세럼 스무드 앤 리치"],["5","데이 앤 나이트 페이스 크림"],["E","인텐시브 아이 크림"]],
+          tip:"로션을 바르기 전, 건조한 부위에만 부스터 오일을 사용하세요."}
+  };
+  var panel = document.getElementById("rt-panel");
+  var tabs = document.querySelectorAll(".tab");
+  function steps(a){return a.map(function(s){return "<li><i>"+s[0]+"</i><span>"+esc(s[1])+"</span></li>";}).join("");}
+  function showRoutine(k){
+    var r = R[k];
+    tabs.forEach(function(t){ var on=t.dataset.k===k; t.setAttribute("aria-selected", on?"true":"false"); t.tabIndex = on?0:-1; if(on) panel.setAttribute("aria-labelledby", t.id); });
+    panel.innerHTML = '<div class="rt-col"><h3>아침</h3><ol>'+steps(r.am)+'</ol></div><div class="rt-col"><h3>저녁</h3><ol>'+steps(r.pm)+'</ol></div><p class="rt-tip"><b>팁</b> · '+esc(r.tip)+'</p>';
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener("click", function(){ showRoutine(t.dataset.k); });
+    t.addEventListener("keydown", function(e){
+      if(e.key!=="ArrowRight" && e.key!=="ArrowLeft") return;
+      var n = tabs[(i + (e.key==="ArrowRight"?1:tabs.length-1)) % tabs.length]; n.focus(); showRoutine(n.dataset.k);
+    });
+  });
+  showRoutine("normal");
+
+  /* form options */
+  function opts(boxId, name, items, type, checked){
+    var box = document.getElementById(boxId);
+    items.forEach(function(label, i){
+      var id = boxId+"-"+i;
+      var w = document.createElement("div"); w.className="opt";
+      w.innerHTML = '<input type="'+type+'" id="'+id+'" name="'+name+'" value="'+esc(label)+'"'+((checked||[]).indexOf(label)>-1?" checked":"")+'><label for="'+id+'">'+esc(label)+'</label>';
+      box.appendChild(w);
+    });
+  }
+  opts("c-concerns","concern",["건조함","탄력","광채·톤","피부결","예민함","모공","눈가"],"checkbox");
+  opts("c-interest","interest",["컨벤션 Boost 키트","제품 추천","피부 타입 체크","센터 방문 체험"],"checkbox");
+  opts("c-way","way",["인스타 DM","카카오톡","전화","센터 방문"],"radio",["인스타 DM"]);
+
+  /* prefill interest from buttons */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("[data-interest]");
+    if(!a) return;
+    var v = a.getAttribute("data-interest"), found = false;
+    document.querySelectorAll('input[name="interest"]').forEach(function(inp){ if(inp.value===v){ inp.checked = true; found = true; } });
+    if(!found){ var box=document.getElementById("c-interest"); var n=box.children.length; opts("c-interest","interest",[v],"checkbox",[v]); var last=box.lastElementChild.querySelector("input"); last.id="c-interest-x"+n; last.nextElementSibling.htmlFor=last.id; }
+  });
+
+  var form = document.getElementById("cform");
+  var out = document.getElementById("out");
+  var outText = document.getElementById("out-text");
+  var status = document.getElementById("status");
+  var kakao = document.getElementById("kakao");
+  if(KAKAO_URL){ kakao.href = KAKAO_URL; kakao.hidden = false; }
+
+  /* 하단 상담 버튼: 첫 화면을 지나면 보이고, 상담 섹션에서는 숨김 */
+  var mcta = document.getElementById("mcta"), heroEl = document.getElementById("top"), consultEl = document.getElementById("consult");
+  function syncCta(){
+    var pastHero = heroEl.getBoundingClientRect().bottom < 80;
+    var c = consultEl.getBoundingClientRect();
+    var inConsult = c.top < window.innerHeight - 40 && c.bottom > 0;
+    mcta.hidden = !(pastHero && !inConsult);
+  }
+  window.addEventListener("scroll", syncCta, {passive:true}); window.addEventListener("resize", syncCta); syncCta();
+
+  function vals(name){ return Array.prototype.map.call(document.querySelectorAll('input[name="'+name+'"]:checked'), function(i){return i.value;}); }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = document.getElementById("c-name").value.trim();
+    var err = document.getElementById("c-err");
+    if(!name){ err.hidden=false; document.getElementById("c-name").focus(); return; }
+    err.hidden = true;
+    var way = vals("way")[0] || "인스타 DM";
+    var lines = [
+      "안녕하세요, 이랑코치님! 이키세 상담 신청합니다.",
+      "",
+      "· 이름: "+name,
+      "· 피부 타입: "+document.getElementById("c-skin").value,
+      "· 피부 고민: "+(vals("concern").join(", ") || "-"),
+      "· 궁금한 내용: "+(vals("interest").join(", ") || "-"),
+      "· 상담 방식: "+way,
+      "· 편한 시간: "+document.getElementById("c-time").value
+    ];
+    var memo = document.getElementById("c-memo").value.trim();
+    if(memo){ lines.push("· 메모: "+memo); }
+    if(way==="카카오톡" || way==="전화"){ lines.push("· 연락처: (여기에 적어 주세요)"); }
+    outText.value = lines.join("\n");
+    out.hidden = false;
+    status.textContent = "";
+    out.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  document.getElementById("copy").addEventListener("click", function(){
+    var t = outText.value;
+    function fallback(){ outText.focus(); outText.select(); status.textContent = "메시지를 선택해 두었어요. 길게 눌러 복사한 뒤 DM에 붙여 넣어 주세요."; }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){ status.textContent = "복사했어요. ‘인스타그램 DM 열기’를 눌러 붙여 넣고 보내 주세요."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+
+</body>
+</html>
